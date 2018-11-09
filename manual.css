@@ -1,0 +1,352 @@
+﻿/*
+MIT License
+
+Copyright (c) 2018 tkpphr
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+header {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    border-bottom: solid 2px lightgray;
+}
+
+header > nav {
+    height: 100%;
+}
+
+section {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    top: calc(100% - 30px);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid lightgray;
+}
+
+.light-theme{
+    background:white;
+    color:black;
+}
+
+.dark-theme {
+    color: white;
+    background: #222222;
+}
+
+.center-aligned-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-aligned-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.margin-lt {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.margin-rt {
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+.margin-lb {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.margin-rb {
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.margin-tb {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.margin-lr {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.padding-lt {
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+.padding-rt {
+    padding-right: 1em;
+    padding-top: 1em;
+}
+
+.padding-lb {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.padding-rb {
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.padding-tb {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.padding-lr {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    bottom: 28px;
+    right: 0;
+    overflow: auto;
+}
+
+.container a {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.side-bar {
+    width: 250px;
+    height: 100%;
+    float: left;
+    overflow: auto;
+    border-right: 2px solid lightgray;
+}
+
+.side-bar > h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.main-content {
+    width: calc(100% - 252px);
+    height: 100%;
+    float: right;
+    overflow: auto;
+}
+
+.modal-background {
+    width: 100%;
+    height: 100%;
+    background: rgba(100,100,100,0.7);
+    z-index: 1002;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-foreground {
+    padding: 2em;
+    border-radius: 5px;
+    position: relative;
+}
+
+.modal-head {
+    width: 100%;
+    height: 48px;
+    border-bottom: solid 2px lightblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font: bold 18px sans-serif;
+}
+
+.modal-head > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-head > div:nth-child(1) {
+    width: calc(100% - 96px);
+    height: 100%;
+    float: left;
+}
+
+.modal-head > div:nth-child(2) {
+    width: 96px;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 5px;
+    overflow: auto;
+}
+
+@media screen and (max-width:768px) {
+    .modal-body::-webkit-scrollbar {
+        width: 8px;
+        background: #9aadfc;
+    }
+
+    .modal-body::-webkit-scrollbar:horizontal {
+        width: 8px;
+        background: #9aadfc;
+    }
+
+    .modal-body::-webkit-scrollbar-thumb {
+        background: darkgray;
+    }
+
+    .modal-body::-webkit-scrollbar-thumb:horizontal {
+        background: darkgray;
+    }
+
+    .modal-body::-webkit-scrollbar-track-piece:start {
+        background: lightgray;
+    }
+
+    .modal-body::-webkit-scrollbar-track-piece:end {
+        background: lightgray;
+    }
+
+    .modal-body::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}
+
+nav.top-menu {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+
+nav.top-menu > a {
+    font: bold 18px sans-serif;
+}
+
+nav.top-menu > .logo {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+nav.top-menu > a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: black;
+    padding: 4px;
+}
+
+nav.top-menu > a:hover {
+    text-decoration: none;
+    background: dodgerblue;
+    border-radius: 5px;
+    color: white;
+}
+
+nav.top-menu > .selected {
+    text-decoration: none;
+    background: dodgerblue;
+    border-radius: 5px;
+    color: white;
+}
+
+.aspect-fill {
+    max-width: 90%;
+    height: auto;
+    margin: 5%;
+}
+
+.button {
+    color: cornflowerblue;
+    padding: 5px;
+    cursor: pointer;
+    font: bold 16px sans-serif;
+    border-radius: 5px;
+    user-select: none;
+}
+
+@media screen and (orientation: portrait) {
+
+    .landscape-only{
+        display: none;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .portrait-only{
+        display: none;
+    }
+}
